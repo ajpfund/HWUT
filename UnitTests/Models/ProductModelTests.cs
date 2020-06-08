@@ -107,7 +107,7 @@ namespace UnitTests
             result.Ratings = testVar;
 
             // Assert
-            Assert.AreEqual(testVar,result.Ratings);
+            Assert.AreEqual(testVar, result.Ratings);
         }
 
         [TestMethod]
@@ -146,7 +146,7 @@ namespace UnitTests
             var retVal = result.Description;
 
             // Assert
-            Assert.AreEqual(retVal,result.Description);
+            Assert.AreEqual(retVal, result.Description);
         }
 
         [TestMethod]
@@ -323,7 +323,7 @@ namespace UnitTests
             int retVal = result.AverageRating();
 
             // Assert
-            Assert.AreEqual(0,retVal);
+            Assert.AreEqual(0, retVal);
         }
 
         [TestMethod]
@@ -359,7 +359,7 @@ namespace UnitTests
         {
             // Arrange
             var result = new ProductModel();
-            result.Ratings = new int[] { 3,4,5 };
+            result.Ratings = new int[] { 3, 4, 5 };
 
             // Act
             int retVal = result.AverageRating();
@@ -367,5 +367,30 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(4, retVal);
         }
+
+        [TestMethod]
+        public void ProductModel_ToString_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Id = "testID";
+            result.Maker = "testMaker";
+            result.Image = "testImage";
+            result.Url = "testURL";
+            result.Title = "testTitle";
+            result.Description = "testDescription";
+            result.Date = result.Date = DateTime.Now.Date;
+            result.Sequence = "testSequence";
+            result.Email = "testEmail";
+            result.Logistics = "testLogistics";
+            result.Ratings = new int[] { 3, 4, 5 };
+
+            // Act
+            var retVal = result.ToString();
+
+            // Assert
+            Assert.IsNotNull(retVal);
+        }
+
     }
-}
+}   
