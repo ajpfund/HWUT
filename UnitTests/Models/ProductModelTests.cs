@@ -149,6 +149,33 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void ProductModel_Set_Image_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Image = "Test Image";
+
+            // Assert
+            Assert.IsNotNull(result.Image);
+        }
+
+        [TestMethod]
+        public void ProductModel_Get_Image_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Image = "Test Image";
+
+            // Act
+            var retVal = result.Image;
+
+            // Assert
+            Assert.AreEqual(retVal, result.Image);
+        }
+
+        [TestMethod]
         public void ProductModel_AverageRating_Invalid_Ratings_Should_Pass()
         {
             // Arrange
