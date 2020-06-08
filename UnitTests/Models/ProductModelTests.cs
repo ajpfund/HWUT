@@ -68,7 +68,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void ProductModel_AverageRating_Invalid_Should_Pass()
+        public void ProductModel_AverageRating_Invalid_Ratings_Should_Pass()
         {
             // Arrange
             var result = new ProductModel();
@@ -81,5 +81,32 @@ namespace UnitTests
             Assert.AreEqual(0,retVal);
         }
 
+        [TestMethod]
+        public void ProductModel_AverageRating_Invalid_ZeroCount_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Ratings = new int[] { };
+
+            // Act
+            int retVal = result.AverageRating();
+
+            // Assert
+            Assert.AreEqual(0, retVal);
+        }
+
+        [TestMethod]
+        public void ProductModel_AverageRating_Invalid_ZeroTotal_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Ratings = new int[] { 0 };
+
+            // Act
+            int retVal = result.AverageRating();
+
+            // Assert
+            Assert.AreEqual(0, retVal);
+        }
     }
 }
