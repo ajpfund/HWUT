@@ -45,6 +45,20 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void ProductModel_Set_Logistics_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Logistics = "Test Logistics";
+
+            // Assert
+            Assert.AreEqual("Test Logistics", result.Logistics);
+        }
+
+
+        [TestMethod]
         public void ProductModel_Get_Logistics_Default_Should_Pass()
         {
             // Arrange
@@ -54,6 +68,20 @@ namespace UnitTests
 
             // Assert
             Assert.AreEqual("", result.Logistics);
+        }
+
+
+        [TestMethod]
+        public void ProductModel_Set_Email_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Email = "Test Email";
+
+            // Assert
+            Assert.AreEqual("Test Email", result.Email);
         }
 
         [TestMethod]
@@ -66,6 +94,20 @@ namespace UnitTests
 
             // Assert
             Assert.AreEqual("Unknown", result.Email);
+        }
+
+        [TestMethod]
+        public void ProductModel_Set_Ratings_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            int[] testVar = new int[] { 3, 4, 5 };
+
+            // Act
+            result.Ratings = testVar;
+
+            // Assert
+            Assert.AreEqual(testVar,result.Ratings);
         }
 
         [TestMethod]
@@ -105,6 +147,33 @@ namespace UnitTests
 
             // Assert
             Assert.AreEqual(retVal,result.Description);
+        }
+
+        [TestMethod]
+        public void ProductModel_Set_Sequence_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Sequence = "Test Sequence";
+
+            // Assert
+            Assert.IsNotNull(result.Sequence);
+        }
+
+        [TestMethod]
+        public void ProductModel_Get_Sequence_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Sequence = "Test Sequence";
+
+            // Act
+            var retVal = result.Sequence;
+
+            // Assert
+            Assert.AreEqual(retVal, result.Sequence);
         }
 
         [TestMethod]
