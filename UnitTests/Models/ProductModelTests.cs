@@ -68,6 +68,87 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void ProductModel_Set_Description_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Description = "Test Description";
+
+            // Assert
+            Assert.IsNotNull(result.Description);
+        }
+
+        [TestMethod]
+        public void ProductModel_Get_Description_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Description = "Test Description";
+
+            // Act
+            var retVal = result.Description;
+
+            // Assert
+            Assert.AreEqual(retVal,result.Description);
+        }
+
+        [TestMethod]
+        public void ProductModel_Set_ID_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Id = "Test ID";
+
+            // Assert
+            Assert.IsNotNull(result.Id);
+        }
+
+        [TestMethod]
+        public void ProductModel_Get_ID_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Id = "Test ID";
+
+            // Act
+            var retVal = result.Id;
+
+            // Assert
+            Assert.AreEqual(retVal, result.Id);
+        }
+
+        [TestMethod]
+        public void ProductModel_Set_Maker_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Maker = "Test Maker";
+
+            // Assert
+            Assert.IsNotNull(result.Maker);
+        }
+
+        [TestMethod]
+        public void ProductModel_Get_Maker_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Maker = "Test Maker";
+
+            // Act
+            var retVal = result.Maker;
+
+            // Assert
+            Assert.AreEqual(retVal, result.Maker);
+        }
+
+        [TestMethod]
         public void ProductModel_AverageRating_Invalid_Ratings_Should_Pass()
         {
             // Arrange
@@ -107,6 +188,20 @@ namespace UnitTests
 
             // Assert
             Assert.AreEqual(0, retVal);
+        }
+
+        [TestMethod]
+        public void ProductModel_AverageRating_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Ratings = new int[] { 3,4,5 };
+
+            // Act
+            int retVal = result.AverageRating();
+
+            // Assert
+            Assert.AreEqual(4, retVal);
         }
     }
 }
