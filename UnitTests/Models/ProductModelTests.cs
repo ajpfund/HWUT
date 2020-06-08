@@ -66,5 +66,20 @@ namespace UnitTests
             // Assert
             Assert.IsNotNull(result.Ratings);
         }
+
+        [TestMethod]
+        public void ProductModel_AverageRating_Invalid_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Ratings = null;
+
+            // Act
+            int retVal = result.AverageRating();
+
+            // Assert
+            Assert.AreEqual(0,retVal);
+        }
+
     }
 }
