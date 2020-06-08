@@ -54,5 +54,18 @@ namespace UnitTests
             // Assert
             Assert.AreEqual("Unknown", result.Email);
         }
+
+        [TestMethod]
+        public void ProductModel_Get_Ratings_Default_Should_Pass()
+        {
+            // Arrange
+            int[] testRatings = new int[] { 5 };
+
+            // Act
+            var result = new ProductModel();
+
+            // Assert
+            Assert.AreEqual(testRatings, result.Ratings);
+        }
     }
 }
