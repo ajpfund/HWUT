@@ -176,6 +176,33 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void ProductModel_Set_URL_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Url = "Test URL";
+
+            // Assert
+            Assert.IsNotNull(result.Url);
+        }
+
+        [TestMethod]
+        public void ProductModel_Get_URL_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Url = "Test URL";
+
+            // Act
+            var retVal = result.Url;
+
+            // Assert
+            Assert.AreEqual(retVal, result.Url);
+        }
+
+        [TestMethod]
         public void ProductModel_AverageRating_Invalid_Ratings_Should_Pass()
         {
             // Arrange
