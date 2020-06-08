@@ -20,6 +20,19 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void ProductModel_Set_Date_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Date = DateTime.UtcNow.AddDays(1);
+
+            // Assert
+            Assert.AreEqual(DateTime.UtcNow.AddDays(1).ToShortDateString(), result.Date.ToShortDateString());
+        }
+
+        [TestMethod]
         public void ProductModel_Get_Date_Default_Should_Pass()
         {
             // Arrange
@@ -201,6 +214,34 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(retVal, result.Url);
         }
+
+        [TestMethod]
+        public void ProductModel_Set_Title_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+            // Act
+            result.Title = "Test Title";
+
+            // Assert
+            Assert.IsNotNull(result.Title);
+        }
+
+        [TestMethod]
+        public void ProductModel_Get_Title_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Title = "Test Title";
+
+            // Act
+            var retVal = result.Title;
+
+            // Assert
+            Assert.AreEqual(retVal, result.Title);
+        }
+
 
         [TestMethod]
         public void ProductModel_AverageRating_Invalid_Ratings_Should_Pass()
